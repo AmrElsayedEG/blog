@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>{% block title %} {% endblock %}</title>
+	<meta charset="utf-8">
+	<meta name="author" content="pixelhint.com">
+	<link rel="stylesheet" type="text/css" href="{% static "css/reset.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "css/main.css" %}">
+</head>
+<body>
+
+	<header>
+		<div class="wrapper">
+			<a href="http://127.0.0.1:8000"><img src="{% static "img/logo.png" %}" class="h_logo" alt="Blogin" title=""></a>
+			<nav>
+				<ul class="main_nav">
+					<li><a href="http://127.0.0.1:8000">Home</a></li>
+					<li><a href="/about/">About Me</a></li>
+					<li><a href="/contact/">Contact Me</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header><!-- Header End -->
+{% block content %}
+
+    {% endblock %}
+		<!--<nav class="pagination">-->
+			<!--<a href="#" class="previous"><i></i>Previous</a>-->
+			<!--<a href="#" class="next">Next<i></i></a>-->
+		<!--</nav>&lt;!&ndash; Pagination End &ndash;&gt;-->
+	<!--&lt;!&ndash; Main End &ndash;&gt;-->
+
+	<footer>
+		<div class="wrapper">
+			<img class="logo_footer" src="{% static "img/logo_footer.png" %}" alt="Blogin" title="">
+			<p class="rights">© 2018 <a href="https://www.facebook.com/amr.elsayed.73999" target="_blink">Amr Elsayed</a> </p>
+			<ul class="social_profiles">
+				<li class="f"><a href="http://facebook.com/amr.elsayed.73999" target="_blink"></a></li>
+				<li class="t"><a href="http://twitter.com/" target="_blink"></a></li>
+				<li class="be"><a href="http://behance.net/" target="_blink"></a></li>
+				<li class="d"><a href="http://dribbble.com/" target="_blink"></a></li>
+			</ul>
+		</div>
+	</footer><!-- Footer End -->
+
+</body>
+</html>

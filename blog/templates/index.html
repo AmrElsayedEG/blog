@@ -1,0 +1,164 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Blogin | beautiful and Minimal Blog Template  Designed & Coded by pixelhint.com</title>
+	<meta charset="utf-8">
+	<meta name="author" content="pixelhint.com">
+	<link rel="stylesheet" type="text/css" href="{% static "css/reset.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "css/main.css" %}">
+</head>
+<body>
+
+	<header>
+		<div class="wrapper">
+			<a href="http://127.0.0.1:8000"><img src="{% static "img/logo.png" %}" class="h_logo" alt="Blogin" title=""></a>
+			<nav>
+				<ul class="main_nav">
+					<li><a href="http://127.0.0.1:8000">Home</a></li>
+                    <li><a href="/about/">About Me</a></li>
+					<li><a href="/contact/">Contact Me</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header><!-- Header End -->
+<!-- Article -->
+	{%for obj in query%}
+	<section class="main wrapper">
+		<article>
+			<div class="article_image">
+				{% if obj.image %}
+				<a href="/{{ obj.id}}/">
+					<img src="http://127.0.0.1:8000/media/{{ obj.image }}" alt="" title="">
+				</a>
+				{% endif %}
+			</div>
+			<div class="post">
+				<h1 class="title">
+					<a href="/{{ obj.id}}/">{{ obj.title }}</a>
+				</h1>
+
+				<p>{{ obj.review }}</p>
+
+				<a class="read_more" href="/{{ obj.id}}/">Continue Reading <i class="read_more_arrow"></i> </a>
+			</div>
+		</article>
+
+	{% endfor %}
+<!-- Article End -->
+
+		<nav class="pagination">
+			{% if query.has_previous %}
+			<a href="?{{page_var}}={{ query.previous_page_number }}" class="previous"><i></i>Previous</a>
+			{% endif %}
+			{% if query.has_next %}
+			<a href="?{{page_var}}={{ query.next_page_number }}" class="next">Next<i></i></a>
+			{% endif %}
+		</nav><!-- Pagination End -->
+	</section><!-- Main End -->
+
+	<footer>
+		<div class="wrapper">
+			<img class="logo_footer" src="{% static "img/logo_footer.png" %}" alt="Blogin" title="">
+			<p class="rights">© 2018 <a href="https://www.facebook.com/amr.elsayed.73999" target="_blink">Amr Elsayed</a> </p>
+			<ul class="social_profiles">
+				<li class="f"><a href="http://facebook.com/amr.elsayed.73999" target="_blink"></a></li>
+				<li class="t"><a href="http://twitter.com/" target="_blink"></a></li>
+				<li class="be"><a href="http://behance.net/" target="_blink"></a></li>
+				<li class="d"><a href="http://dribbble.com/" target="_blink"></a></li>
+			</ul>
+		</div>
+	</footer><!-- Footer End -->
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--{% load static %}-->
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+	<!--<title>Blogin | beautiful and Minimal Blog Template  Designed & Coded by pixelhint.com</title>-->
+	<!--<meta charset="utf-8">-->
+	<!--<meta name="author" content="pixelhint.com">-->
+	<!--<link rel="stylesheet" type="text/css" href="{% static "css/reset.css" %}">-->
+	<!--<link rel="stylesheet" type="text/css" href="{% static "css/main.css" %}">-->
+<!--</head>-->
+<!--<body>-->
+
+	<!--<header>-->
+		<!--<div class="wrapper">-->
+			<!--<a href="http://127.0.0.1:8000"><img src="{% static "img/logo.png" %}" class="h_logo" alt="Blogin" title=""></a>-->
+			<!--<nav>-->
+				<!--<ul class="main_nav">-->
+					<!--<li><a href="http://127.0.0.1:8000">Home</a></li>-->
+                    <!--<li><a href="/about/">About Me</a></li>-->
+					<!--<li><a href="/contact/">Contact Me</a></li>-->
+				<!--</ul>-->
+			<!--</nav>-->
+		<!--</div>-->
+	<!--</header>&lt;!&ndash; Header End &ndash;&gt;-->
+<!--&lt;!&ndash; Article &ndash;&gt;-->
+	<!--{% for art in art %}-->
+	<!--<section class="main wrapper">-->
+		<!--<article>-->
+			<!--<div class="article_image">-->
+				<!--<a href="/{{ art.id}}/">-->
+					<!--<img src="http://127.0.0.1:8000/media/{{ art.image }}" alt="" title="">-->
+				<!--</a>-->
+			<!--</div>-->
+			<!--<div class="post">-->
+				<!--<h1 class="title">-->
+					<!--<a href="/{{ art.id}}/">{{ art.title }}</a>-->
+				<!--</h1>-->
+
+				<!--<p>{{ art.review }}</p>-->
+
+				<!--<a class="read_more" href="/{{ art.id}}/">Continue Reading <i class="read_more_arrow"></i> </a>-->
+			<!--</div>-->
+		<!--</article>-->
+
+	<!--{% endfor %}-->
+<!--&lt;!&ndash; Article End &ndash;&gt;-->
+
+		<!--<nav class="pagination">-->
+			<!--<a href="#" class="previous"><i></i>Previous</a>-->
+			<!--<a href="#" class="next">Next<i></i></a>-->
+		<!--</nav>&lt;!&ndash; Pagination End &ndash;&gt;-->
+	<!--</section>&lt;!&ndash; Main End &ndash;&gt;-->
+
+	<!--<footer>-->
+		<!--<div class="wrapper">-->
+			<!--<img class="logo_footer" src="{% static "img/logo_footer.png" %}" alt="Blogin" title="">-->
+			<!--<p class="rights">© 2018 <a href="https://www.facebook.com/amr.elsayed.73999" target="_blink">Amr Elsayed</a> </p>-->
+			<!--<ul class="social_profiles">-->
+				<!--<li class="f"><a href="http://facebook.com/amr.elsayed.73999" target="_blink"></a></li>-->
+				<!--<li class="t"><a href="http://twitter.com/" target="_blink"></a></li>-->
+				<!--<li class="be"><a href="http://behance.net/" target="_blink"></a></li>-->
+				<!--<li class="d"><a href="http://dribbble.com/" target="_blink"></a></li>-->
+			<!--</ul>-->
+		<!--</div>-->
+	<!--</footer>&lt;!&ndash; Footer End &ndash;&gt;-->
+
+<!--</body>-->
+<!--</html>-->

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %} {{ art.title }} {% endblock %}
+
+    {% block content %}
+
+<div align="center"><font size="6"><br><br>
+					{{ art.title }} </font>
+<br><br>
+    <img src="http://127.0.0.1:8000/media/{{art.image}}"><br><br>
+<font size="4">
+                 {{ art.details }}
+</font></div>
+<!--&lt;!&ndash;Comment Section&ndash;&gt;-->
+<font size="5"><font color="green">
+<br>Comments<br></font></font><br>
+{% for co in co %}
+<font color="red">
+User: </font>{{ co.name }} <br>
+<font color="red">
+Message: </font>{{ co.comment }} <br>
+---------------------------------------------------- <br>
+{% endfor %} <div align="center">
+<form action="" method="post">
+   {% csrf_token %}
+    {{ form_data }}
+    <button type="submit">Submit Your Comment</button>
+    {{ msg }}
+</form></div>
+{% endblock %}
